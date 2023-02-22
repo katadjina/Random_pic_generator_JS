@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!DOCTYPE html>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pic{
+      
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    img{
+        width: 300px;
+        height: 300px;
+    }
+</style>
+<body>
+    
+    <h1>Random Dog Photos</h1>
+    <div id="photos" class="pic"></div>
+
+
+
+    <script>
+
+
+        /*
+let p = new Promise ((resolve, reject) => {
+    let a = 1 + 1;
+    if(a == 3){
+        resolve("success")
+    }
+    else{
+        reject("Failed");
+    }
+})
+
+//then only runs for RESOLVE
+p.then((message) =>{
+    console.log("This is the THEN " + message)
+}).catch((message) => {
+    console.log("This message comes from catch " + message)
+});
+
+
+*/
+
+
+
+
+const photosDiv = document.getElementById('photos');
+
+for (let i = 0; i < 8; i++) {
+  fetch('https://random.dog/woof.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.url.endsWith('.jpg')) {
+        const img = document.createElement('img');
+        img.src = data.url;
+        photosDiv.appendChild(img);
+      }
+    });
+}
+
+
+
+    </script>
+</body>
+</html>
+</html>
+</html>
+</html>
+</html>
